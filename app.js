@@ -9,19 +9,22 @@ let comer = 1;
 let contador = 0;
 let intervaloFantasmito;
 
-fantasmito.addEventListener("click", () => {
-  comerPacman();
-  contador = contador + 100;
+intervaloFantasmito = setInterval(showFantasmito, 4000);
+
+fantasmito.addEventListener("click", (e) => {
+  comerPacman(e);
+  contador += 100;
   divcontador.innerHTML = contador + " PTS";
   gameOver();
 });
 
-cherry.addEventListener("click", () => {
-  comerCherry();
-  contador = contador + 500;
+cherry.addEventListener("click", (e) => {
+  comerCherry(e);
+  contador += 500;
   divcontador.innerHTML = contador + " PTS";
   gameOver();
 });
+
 
 function gameOver() {
   if (contador >= 5000) {
@@ -29,47 +32,50 @@ function gameOver() {
     fantasmito.style.display = "none";
     cherry.style.display = "none";
     logoPacman.style.display = "none";
-    clearInterval(intervaloFantasmito); // Detener la aparición del fantasma
+    clearInterval(intervaloFantasmito);
   }
 }
 
-function comerPacman() {
+function comerPacman(event) {
   fantasmito.style.display = "none";
   comer++;
+
+  logoPacman.style.left = event.clientX - logoPacman.offsetWidth / 2 + "px";
+  logoPacman.style.top = event.clientY - logoPacman.offsetHeight / 2 + "px";
   if (comer % 4 !== 0) {
-    // Mostrar el fantasma cada 2 segundos si no es el cuarto clic
-    intervaloFantasmito = setInterval(showFantasmito, 2000);
+
+    intervaloFantasmito = setInterval(showFantasmito, 4000);
   } else {
     toggleItems();
   }
 }
 
-function comerCherry() {
+function comerCherry(event) {
   cherry.style.display = "none";
   comer++;
+  logoPacman.style.left = event.clientX - logoPacman.offsetWidth / 2 + "px";
+  logoPacman.style.top = event.clientY - logoPacman.offsetHeight / 2 + "px";
   toggleItems();
 }
 
 function showFantasmito() {
-    // Obtener las dimensiones del fantasma para ajustar el rango de posición
-    let fantasmitoWidth = fantasmito.offsetWidth;
-    let fantasmitoHeight = fantasmito.offsetHeight;
-  
-    // Generar posiciones aleatorias en píxeles para el fantasma
-    let posX = Math.random() * (window.innerWidth - fantasmitoWidth);
-    let posY = Math.random() * (window.innerHeight - fantasmitoHeight);
-  
-    // Establecer las posiciones
-    fantasmito.style.left = posX + "px";
-    fantasmito.style.top = posY + "px";
-  
-    // Mostrar el fantasma
-    fantasmito.style.display = "block";
-  
-    if (contador >= 5000) {
-      fantasmito.style.display = "none";
-    }
+  let fantasmitoWidth = fantasmito.offsetWidth;
+  let fantasmitoHeight = fantasmito.offsetHeight;
+
+
+  let posX = Math.random() * (window.innerWidth - fantasmitoWidth);
+  let posY = Math.random() * (window.innerHeight - fantasmitoHeight);
+
+
+  fantasmito.style.left = posX + "px";
+  fantasmito.style.top = posY + "px";
+
+  fantasmito.style.display = "block";
+
+  if (contador >= 100000) {
+    fantasmito.style.display = "none";
   }
+}
 
 function showCherry() {
   cherry.style.display = "block";
@@ -80,10 +86,10 @@ function showCherry() {
 
 function toggleItems() {
   if (comer % 4 === 0) {
-    setTimeout(showCherry, 2000);
+    setTimeout(showCherry, 4000);
     fantasmito.style.display = "none";
   } else {
-    setTimeout(showFantasmito, 2000);
+    setTimeout(showFantasmito, 4000);
     cherry.style.display = "none";
   }
 }

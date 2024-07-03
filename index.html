@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio Pacman</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <header>
-      <div id="contheader">
-        <div id="contlogo">
-          <img id="logoheader" src="./public/img/pac-man-logo.png" alt="logoheader" />
-        </div>
-        <div id="conttexto">
-          <img id="logoTexto" src="./public/img/logo.png" alt="logoTexto" />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio Pacman</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header>
+    <div id="contheader">
+      <div id="contlogo">
+        <img id="logoheader" src="./public/img/pac-man-logo.png" alt="logoheader" />
       </div>
-      <div id="contcontador"><div id="contador">0 PTS</div></div>
-    </header>
-    <div id="main">
-      <div id="contenedorPacman">
-        <div><img src="./public/img/pacmann.png" id="logoPacman" alt="logoPacman" /></div>
-        <div>
-          <img src="/public/img/fantasmito.png" id="fantasmito" alt="fantasmito" />
-        </div>
-        <div><img src="./public/img/cherry.png" id="cherry" alt="cherry" /></div>
-        <div id="gameover">GAME OVER</div>
+      <div id="conttexto">
+        <img id="logoTexto" src="./public/img/logo.png" alt="logoTexto" />
       </div>
     </div>
+    <div id="contcontador"><div id="contador">0 PTS</div></div>
+  </header>
+  <div id="main">
+    <div id="contenedorPacman">
+      <div><img src="./public/img/pacmann.png" id="logoPacman" alt="logoPacman" /></div>
+      <div>
+        <img src="/public/img/fantasmito.png" id="fantasmito" alt="fantasmito" />
+      </div>
+      <div><img src="./public/img/cherry.png" id="cherry" alt="cherry" /></div>
+      <div id="gameover">GAME OVER</div>
+    </div>
+  </div>
 
-    <audio id="intro" src="/audio/Intro.mp3" autoplay></audio>
+  <audio id="intro" src="/public/sound/Pacman-Game-Start-Sound.mp3" autoplay></audio>
 
-    <script src="/app.js"></script>
-  </body>
+  <script src="/app.js"></script>
+</body>
 </html>

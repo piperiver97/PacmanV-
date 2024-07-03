@@ -1,95 +1,93 @@
 body {
-        background-image: url("/public/img/fondo-pacman.jpg");
-      }
-     
-      
-      #main {
-        width: 100%;
-        height: 800px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      #contheader {
-        width: 65%;
-        height: 150px;
-        float: left;
-      }
-      #contlogo {
-        width: 10%;
-        float: left;
-      }
-      #contcontador {
-        width: 30%;
-        float: left;
-      }
-      #conttexto {
-        width: 20%;
-        float: left;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      #contenedorPacman {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100px;
-      }
-      
-      #logoPacman {
-        width: 100px;
-        height: 100px;
-      }
-      
-      #logoheader {
-        height: 150px;
-       
-      }
-      
-      #logoTexto {
-        height: 580px;
-       
-    
-    
-      }
-      #fantasmito {
-        width: 100px;
-        height: 100px;
-      }
-      
-      #cherry {
-        width: 100px;
-        height: 100px;
-      }
-      #contador {
-        height: 135px;
-        margin-right: 5%;
-        float: left;
-        display: flex;
-        color: white;
-        font-size: 100px;
-      }
-      #gameover {
-        font-size: 100px;
-        color: #febd11;
-      }
-      @media only screen and (max-width: 600px) {
-        #gameover {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        #contador {
-          font-size: 20px;
-          height: 120px;
-        }
-        #logoheader {
-          height: 120px;
-        }
-        #logoTexto {
-          height: 120px;
-          margin-left: 250px;
-          width: 100px;
-        }
-      }
+  background-image: url("/public/img/fondo-pacman.jpg");
+}
+
+#main {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contheader {
+  width: 65%;
+  height: 150px;
+  float: left;
+  display: flex;
+  justify-content:space-around ;
+
+}
+
+#contlogo {
+  width: 10%;
+  float: left;
+}
+
+#contcontador {
+  width: 30%;
+  float: left;
+}
+
+#conttexto {
+  width: 20%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contenedorPacman {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+#logoPacman, #fantasmito, #cherry {
+  width: 200px;
+  height: 200px;
+  position: absolute; 
+}
+
+#logoheader {
+  height: 150px;
+}
+
+#logoTexto {
+  height: 580px;
+}
+
+#contador {
+  height: 135px;
+  margin-right: 5%;
+  float: left;
+  display: flex;
+  color: white;
+  font-size: 100px;
+}
+
+#gameover {
+  font-size: 100px;
+  color: #febd11;
+}
+
+@media only screen and (max-width: 600px) {
+  #gameover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #contador {
+    font-size: 20px;
+    height: 120px;
+  }
+  #logoheader {
+    height: 120px;
+  }
+  #logoTexto {
+    height: 120px;
+    margin-left: 250px;
+    width: 100px;
+  }
+}
