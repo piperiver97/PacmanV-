@@ -1,5 +1,5 @@
 body {
-  background-image: url("/public/img/fondo-pacman.jpg");
+  background-image: url("./public/img/fondo-pacman.jpg");
 }
 
 #main {
